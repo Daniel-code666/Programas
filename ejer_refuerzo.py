@@ -6,6 +6,9 @@ MSJ = "Presione una tecla para continuar..."
 
 opt = 1
 
+class NotANumber(Exception):
+    pass
+
 def factorial(num):
     if num == 1 or num == 0:
         num = 1
@@ -21,7 +24,7 @@ def combinacion():
 
     n = factorial(float(listaNM[0]))
     m = factorial(float(listaNM[1]))
-    n_m = factorial(float(listaNM[0]) - float(listaNM[1]))
+    n_m = factorial(abs(float(listaNM[0]) - float(listaNM[1])))
 
     return print(n / (n_m * m)) 
 
@@ -33,7 +36,7 @@ def sumatoria():
     numList = num.split()
 
     if int(numList[0]) > int(numList[1]):
-        return print("n debe ser menor o igual que m")
+        print("El valor de m debe ser mayor a n")
     else:
         for i in range(int(numList[0]), int(numList[1]) + 1):
             suma += i
@@ -94,8 +97,9 @@ def cuota():
     return valList
 
 while opt == 1:
+        
     sel = int(input("1. Combinación\n2. Sumatoria\n3. Función cuadrática\n4. Número de días según su año"
-                    "\n5. Número primo\n6. Cálculo de cuota\n7. Salir\n"))
+                            "\n5. Número primo\n6. Cálculo de cuota\n7. Salir\n"))
 
     if sel == 1:
         combinacion()
