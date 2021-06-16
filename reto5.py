@@ -72,6 +72,3 @@ if cadena == "ACTUALIZAR":
 
 if cadena == "BORRAR":
     delete(info)
-
-if cadena == "max":
-    precioMax()
