@@ -9,7 +9,7 @@ billetesList = billetes.split()
 tempDict = {}
 tempDictReversed = {}
 
-cont, cont2 = 0, 0
+lim, cont, cont2 = 0, 0, int(infoList[1])
 
 for i in billetesList:
     if i not in tempDict and billetesList.count(i) >= 2:
@@ -18,7 +18,7 @@ for i in billetesList:
 
 newList = list(reversed(billetesList))
 
-lim = int(infoList[1])
+
 
 
 
