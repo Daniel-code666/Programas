@@ -18,8 +18,4 @@ for i in billetesList:
 
 newList = list(reversed(billetesList))
 
-
-
-
-
 print(sum(tempDict.values()) - cont, cont2)
