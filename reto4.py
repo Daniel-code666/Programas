@@ -1,3 +1,4 @@
+
 infoInic = input()
 
 billetes = input()
@@ -9,7 +10,7 @@ billetesList = billetes.split()
 tempDict = {}
 tempDictReversed = {}
 
-lim, cont, cont2 = 0, 0, int(infoList[1])
+cont, cont2 = 0, 0
 
 for i in billetesList:
     if i not in tempDict and billetesList.count(i) >= 2:
@@ -18,4 +19,20 @@ for i in billetesList:
 
 newList = list(reversed(billetesList))
 
-print(sum(tempDict.values()) - cont, cont2)
+tempList = []
+newnewList = []
+
+end = int(infoList[1])
+
+for i in newList[1:end + 1]:
+    orig = newList[0]
+
+    if i == orig or i in tempDict:
+        newnewList.append(int(i))
+
+    if int(i) in newnewList and i in tempDict:
+        cont2 += 1 
+
+
+
+print(sum(tempDict.values()) - cont, sum(tempDict.values()) - cont2)
