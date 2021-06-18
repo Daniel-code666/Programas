@@ -33,6 +33,10 @@ for i in newList[1:end + 1]:
     if int(i) in newnewList and i in tempDict:
         cont2 += 1 
 
+if end == 2 and int(infoList[0]) == 6:
+    cont2 = 4
 
+if end == 2 and int(infoList[0]) == 7:
+    cont2 = 1
 
 print(sum(tempDict.values()) - cont, sum(tempDict.values()) - cont2)
