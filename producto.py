@@ -68,13 +68,16 @@ class producto:
         for row in cursor:
             print(row)
 
-        sel = int(input("¿Desea eliminar el producto elegido? SI:1 NO:0\n"))
+        try:
+            sel = int(input("¿Desea eliminar el producto elegido? SI:1 NO:0\n"))
 
-        if sel == 1:
-            cursor = conn.cursor()
-            query = ('delete from Producto where id = ?')
-            cursor.execute(query, [index])
-            cursor.commit()
-            print("Producto eliminado")
-        else:
-            return print("Operación cancelada")
+            if sel == 1:
+                cursor = conn.cursor()
+                query = ('delete from Producto where id = ?')
+                cursor.execute(query, [index])
+                cursor.commit()
+                print("Producto eliminado")
+            else:
+                return print("Operación cancelada")
+        except ValueError:
+            print("Debe ingresar un valor válido")
