@@ -1,4 +1,3 @@
-
 infoInic = input()
 
 billetes = input()
@@ -8,7 +7,6 @@ infoList = infoInic.split()
 billetesList = billetes.split()
 
 tempDict = {}
-tempDictReversed = {}
 
 cont, cont2 = 0, 0
 
@@ -17,26 +15,17 @@ for i in billetesList:
         tempDict[i] = billetesList.count(i)
         cont += 1
 
-newList = list(reversed(billetesList))
+inic = 1
+end = int(infoList[1]) + 1
 
-tempList = []
-newnewList = []
+for i in range(len(billetesList) - 1):
+    for j in range(inic, len(billetesList[:end])):    
+        if billetesList[i] == billetesList[j]:
+            cont2 += 1
+            inic += 1
+            end += 1
 
-end = int(infoList[1])
+    if end == len(billetesList) + 1 or cont2 == 0:
+        break
 
-for i in newList[1:end + 1]:
-    orig = newList[0]
-
-    if i == orig or i in tempDict:
-        newnewList.append(int(i))
-
-    if int(i) in newnewList and i in tempDict:
-        cont2 += 1 
-
-if end == 2 and int(infoList[0]) == 6:
-    cont2 = 4
-
-if end == 2 and int(infoList[0]) == 7:
-    cont2 = 1
-
-print(sum(tempDict.values()) - cont, sum(tempDict.values()) - cont2)
+print(sum(tempDict.values()) - cont, cont2)
